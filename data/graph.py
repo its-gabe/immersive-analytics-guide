@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 taxa_giro = 66
 margem_lucro = 30

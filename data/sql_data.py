@@ -1,19 +1,23 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-# Substitua 'seu_usuario', 'sua_senha' e 'seu_host' pelos seus próprios detalhes de conexão
+
+# ARQUIVO UTILIZADO APENAS PARA PEGAR OS ARQUIVOS DO MYSQL WORKBENCH E CRIAR O ARQUIVO SQL COM AS QUERIES REALIZADAS 
+# NÃO EXECUTE NOVAMENTE POIS CRIARÁ OUTRO ARQUIVO EXCEL COM OS MESMOS DADOS 
+# CASO QUEIRA FAZER A SUA PRÓPRIA ANÁLISE, UTILIZE ESSE ARQUIVO MAS MODIFIQUE AS VÁRIAVEIS NECESSÁRIAS PARA CONTER OS SEUS DADOS
+
 user = 'root'
-password = 'cacau123cacau'
+password = '12345'
 host = '127.0.0.1'
 database = 'e_storex'
 
-# Criar a string de conexão do SQLAlchemy
+# Criando a string de conexão do SQLAlchemy
 connection_str = f'mysql+pymysql://{user}:{password}@{host}/{database}'
 
-# Criar uma engine do SQLAlchemy
+# Criando uma engine do SQLAlchemy
 engine = create_engine(connection_str)
 
-# Lista de consultas SQL
+# Lista das queries
 queries = [
     """
     SELECT concat(c.fname, ' ',c.lname) AS client_name, cpf, count(client_revision) AS quantity
